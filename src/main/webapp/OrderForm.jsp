@@ -81,23 +81,23 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <c:if test="${order == null}">
+                        <c:if test="${orders == null}">
                             <form action="insertOrder" method="post">
                         </c:if>
 
                         <caption>
                             <h2 style="color: rgb(144, 28, 126)">
 
-                                <c:if test="${order == null}">
+                                <c:if test="${orders == null}">
                                     Adicionar Ordem de Pedido
                                 </c:if>
                             </h2>
                         </caption>
 
                         <fieldset class="form-group">
-                            <c:if test="${order != null}">
+                            <c:if test="${orders != null}">
                                 <input type="hidden" class="form-control" name="id"
-                                    value="<c:out value='${order.id}' />" />
+                                    value="<c:out value='${orders.id}' />" />
                             </c:if>
                         </fieldset>
 
@@ -105,25 +105,25 @@
                         <fieldset class="form-group">
                             <label>purch_amt:</label>
                             <input type="number" class="form-control" name="purch_amt" size="45"
-                                value="<c:out value='${order.purch_amt}' />" />
+                                value="<c:out value='${orders.purch_amt}' />" />
                         </fieldset>
 
                         <fieldset class="form-group">
                             <label>ord_date:</label>
-                            <input type="date" class="form-control" name="ord_date" size="45"
-                                value="<c:out value='${order.ord_date}' />" />
+                            <input type="date" class="form-control" name="ord_date"
+                                value="<c:out value='${orders.ord_date}' />" />
                         </fieldset>
 
                         <fieldset class="form-group">
                             <label>salesman_id:</label>
                             <input type="number" class="form-control" name="salesman_id" size="5"
-                                value="<c:out value='${order.salesman_id}' />" />
+                                value="<c:out value='${orders.salesman_id}' />" />
                         </fieldset>
 
                         <fieldset class="form-group">
                             <label>customer_id:</label>
                             <input type="number" class="form-control" name="customer_id" size="5"
-                                value="<c:out value='${order.customer_id}' />" />
+                                value="<c:out value='${orders.customer_id}' />" />
                         </fieldset>
 
                         <button type="submit" class="btn btn-info">Salvar</button>

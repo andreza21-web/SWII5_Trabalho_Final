@@ -1,5 +1,8 @@
 package dao;
 
+// andreza do nascimento pessoa
+//lidiane souza soares
+
 import model.Customer;
 import model.Order;
 import model.Salesman;
@@ -39,13 +42,13 @@ public class CadastroDao {
     }
 
     public boolean insertSalesman(Salesman salesman) throws SQLException {
-        String sql = "INSERT INTO salesman (name, city, comission) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO salesman (name, city, commission) VALUES (?, ?, ?)";
         connect();
 
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
         statement.setString(1, salesman.getName());
         statement.setString(2, salesman.getCity());
-        statement.setFloat(3, salesman.getComission());
+        statement.setFloat(3, salesman.getCommission());
 
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();
@@ -67,9 +70,9 @@ public class CadastroDao {
             int id = resultSet.getInt("salesman_id");
             String name = resultSet.getString("name");
             String city = resultSet.getString("city");
-            float comission = resultSet.getFloat("comission");
+            float commission = resultSet.getFloat("commission");
 
-            Salesman salesman = new Salesman(id, name, city, comission);
+            Salesman salesman = new Salesman(id, name, city, commission);
             listSalesman.add(salesman);
         }
 
@@ -81,15 +84,15 @@ public class CadastroDao {
         return listSalesman;
     }
 
-    public boolean insertOrder(Order order) throws SQLException {
-        String sql = "INSERT INTO order (purch_amt, ord_date, salesman_id, customer_id) VALUES (?, ?, ?, ?)";
+    public boolean insertOrder(Order orders) throws SQLException {
+        String sql = "INSERT INTO orders (purch_amt, ord_date, salesman_id, customer_id) VALUES (?, ?, ?, ?)";
         connect();
 
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-        statement.setFloat(1, order.getPurch_amt());
-        statement.setDate(2, new java.sql.Date(order.getOrd_date().getTime()));
-        statement.setInt(3, order.getSalesman_id());
-        statement.setInt(4, order.getCustomer_id());
+        statement.setFloat(1, orders.getPurch_amt());
+        statement.setDate(2, new java.sql.Date(orders.getOrd_date().getTime()));
+        statement.setInt(3, orders.getSalesman_id());
+        statement.setInt(4, orders.getCustomer_id());
 
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();
@@ -100,7 +103,7 @@ public class CadastroDao {
     public List<Order> listAllOrder() throws SQLException {
         List<Order> listOrder = new ArrayList<>();
 
-        String sql = "SELECT * FROM order";
+        String sql = "SELECT * FROM orders";
 
         connect();
 
@@ -114,8 +117,8 @@ public class CadastroDao {
             int salesman_id = resultSet.getInt("salesman_id");
             int customer_id = resultSet.getInt("customer_id");
 
-            Order order = new Order(ord_no,purch_amt, ord_date, salesman_id, customer_id);
-            listOrder.add(order);
+            Order orders = new Order(ord_no,purch_amt, ord_date, salesman_id, customer_id);
+            listOrder.add(orders);
         }
 
         resultSet.close();

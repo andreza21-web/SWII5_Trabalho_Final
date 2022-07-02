@@ -93,22 +93,22 @@
                         </thead>
                         <tbody>
 
-                            <c:forEach var="order" items="${listOrder}">
+                            <c:forEach var="orders" items="${listOrder}">
                                 <tr>
                                     <td>
-                                        <c:out value="${order.ord_no}" />
+                                        <c:out value="${orders.ord_no}" />
                                     </td>
                                     <td>
-                                        <c:out value="${order.purch_amt}" />
+                                        <c:out value="${orders.purch_amt}" />
                                     </td>
                                     <td>
-                                        <c:out value="${order.ord_date}" />
+                                        <c:out value="${orders.ord_date}" />
                                     </td>
                                     <td>
-                                        <c:out value="${order.customer_id}" />
+                                        <c:out value="${orders.customer_id}" />
                                     </td>
                                     <td>
-                                        <c:out value="${order.salesman_id}" />
+                                        <c:out value="${orders.salesman_id}" />
                                     </td>
                                 </tr>
                             </c:forEach>

@@ -116,8 +116,8 @@
 
                         <fieldset class="form-group">
                             <label>comission:</label>
-                            <input type="number" class="form-control" name="comission" size="5"
-                                value="<c:out value='${salesman.comission}' />" />
+                            <input type="number" class="form-control" name="commission"
+                                value="<c:out value='${salesman.commission}' />" />
                         </fieldset>
 
                         <button type="submit" class="btn btn-info">Salvar</button>

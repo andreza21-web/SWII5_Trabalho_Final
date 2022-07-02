@@ -1,5 +1,8 @@
 package controller;
 
+// andreza do nascimento pessoa
+//lidiane souza soares
+
 import dao.CadastroDao;
 import model.Customer;
 import model.Order;
@@ -105,7 +108,7 @@ public class ControllerServlet  extends HttpServlet {
 
         String name = request.getParameter("name");
         String city = request.getParameter("city");
-        float commission = Float.parseFloat(request.getParameter("comission"));
+        float commission = Float.parseFloat(request.getParameter("commission"));
 
         Salesman newSalesman = new Salesman(name, city, commission);
         cadastroDao.insertSalesman(newSalesman);

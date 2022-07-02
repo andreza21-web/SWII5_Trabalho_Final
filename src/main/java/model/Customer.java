@@ -1,5 +1,9 @@
 package model;
 
+
+// andreza do nascimento pessoa
+//lidiane souza soares
+
 public class Customer {
 
     private int customer_id;

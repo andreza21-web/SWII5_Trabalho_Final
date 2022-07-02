@@ -1,23 +1,26 @@
 package model;
 
+// andreza do nascimento pessoa
+//lidiane souza soares
+
 public class Salesman {
 
     private int salesman_id;
     private String name;
     private String city;
-    private float comission;
+    private float commission;
 
-    public Salesman(String name, String city, float comission) {
+    public Salesman(String name, String city, float commission) {
         this.name = name;
         this.city = city;
-        this.comission = comission;
+        this.commission = commission;
     }
 
-    public Salesman(int salesman_id, String name, String city, float comission) {
+    public Salesman(int salesman_id, String name, String city, float commission) {
         this.salesman_id = salesman_id;
         this.name = name;
         this.city = city;
-        this.comission = comission;
+        this.commission = commission;
     }
 
     public int getSalesman_id() {
@@ -44,11 +47,11 @@ public class Salesman {
         this.city = city;
     }
 
-    public float getComission() {
-        return comission;
+    public float getCommission() {
+        return commission;
     }
 
-    public void setComission(float comission) {
-        this.comission = comission;
+    public void setCommission(float commission) {
+        this.commission = commission;
     }
 }
